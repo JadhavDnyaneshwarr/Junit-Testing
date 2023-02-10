@@ -11,4 +11,9 @@ public class UserRegTest {
         boolean validName = userReg.validateFirstName("Dnyaneshwar");
         Assertions.assertEquals(true, validName);
     }
+    @Test
+    public void whenGivenValidLastNameShouldReturnTrue(){
+        boolean validName = userReg.validateLastName("Dnyaneshwar");
+        Assertions.assertEquals(true, validName);
+    }
 }
