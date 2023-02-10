@@ -25,4 +25,11 @@ public class UserReg {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public boolean validateMobileNumber(String mobileNumber) {
+        String validMobileNumber = "^[1-9]{2}[ ][1-9]{1}[0-9]{9}$";
+        Pattern pattern = Pattern.compile(validMobileNumber);
+        Matcher matcher = pattern.matcher(mobileNumber);
+        return matcher.matches();
+    }
 }
