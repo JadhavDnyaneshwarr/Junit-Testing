@@ -26,4 +26,9 @@ public class UserRegTest {
         boolean validMobileNumber = userReg.validateMobileNumber("91 8806474798");
         Assertions.assertEquals(true, validMobileNumber);
     }
+    @Test
+    public void whenGivenValidPasswordShouldReturnTrue(){
+        boolean validPassword = userReg.validatePassword("Dj@12345");
+        Assertions.assertEquals(true, validPassword);
+    }
 }
