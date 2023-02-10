@@ -21,4 +21,9 @@ public class UserRegTest {
         boolean validEmail = userReg.validateEmail("Jadhav.dnyanesh@bl.co.in");
         Assertions.assertEquals(true, validEmail);
     }
+    @Test
+    public void whenGivenValidMobileNumberShouldReturnTrue(){
+        boolean validMobileNumber = userReg.validateMobileNumber("91 8806474798");
+        Assertions.assertEquals(true, validMobileNumber);
+    }
 }
