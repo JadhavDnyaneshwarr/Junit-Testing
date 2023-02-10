@@ -13,7 +13,12 @@ public class UserRegTest {
     }
     @Test
     public void whenGivenValidLastNameShouldReturnTrue(){
-        boolean validName = userReg.validateLastName("Dnyaneshwar");
+        boolean validName = userReg.validateLastName("Jadhav");
         Assertions.assertEquals(true, validName);
+    }
+    @Test
+    public void whenGivenValidEmailShouldReturnTrue(){
+        boolean validEmail = userReg.validateEmail("Jadhav.dnyanesh@bl.co.in");
+        Assertions.assertEquals(true, validEmail);
     }
 }
