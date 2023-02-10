@@ -32,4 +32,11 @@ public class UserReg {
         Matcher matcher = pattern.matcher(mobileNumber);
         return matcher.matches();
     }
+
+    public boolean validatePassword(String password) {
+        String validPassword = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*+])[A-Za-z0-9!@#$%&*+]{8,}$";
+        Pattern pattern = Pattern.compile(validPassword);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 }
