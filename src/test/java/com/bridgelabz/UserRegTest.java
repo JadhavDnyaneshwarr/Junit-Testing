@@ -10,10 +10,16 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-
+@RunWith(Parameterized.class)
 public class UserRegTest {
     UserReg userReg;
+    private boolean expected;
+    private String email;
 
+    public UserRegTest(boolean expected, String email){
+        this.expected = expected;
+        this.email=email;
+    }
     @Before
     public void setup(){
         userReg = new UserReg();
@@ -43,5 +49,14 @@ public class UserRegTest {
     public void whenGivenValidPasswordShouldReturnTrue(){
         boolean validPassword = userReg.validatePassword("Dj@12345");
         Assertions.assertEquals(true, validPassword);
+    }
+    @Parameterized.Parameters
+    public static Collection data(){
+        Object[][] sampleEmails = new Object[][]{{true, "abc@yahoo.com"}, {true, "abc-100@yahoo.com"},{true,"abc.100@yahoo.com"}, {true, "abc111@abc.com"}, {true, "abc-100@abc.net"}, {true, "abc.100@abc.com.au"}, {true, "abc@1.com"}, {true, "abc@gmail.com.com"}, {true, "abc+100@gmail.com"}};
+        return Arrays.asList(sampleEmails);
+    }
+    @Test
+    public void WhenGivenSampleEmailShouldReturnTrue(){
+        Assert.assertEquals(expected, userReg.validateSampleEmail(email));
     }
 }

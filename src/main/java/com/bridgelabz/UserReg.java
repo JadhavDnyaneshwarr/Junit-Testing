@@ -39,4 +39,10 @@ public class UserReg {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    public boolean validateSampleEmail(String email) {
+        String validEmail = "^[a-z]{3,}[.+-]?[a-zA-z0-9]*[@][a-z0-9]*[.]?[a-z]*[.]?[a-z]*$";
+        Pattern pattern = Pattern.compile(validEmail);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
 }
